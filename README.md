@@ -155,14 +155,15 @@ list.tail.next = list.head;
 
 ### Check to see if a linked list is a cycle
 
-Start with a function that takes in a given node as the starting point (headNode) of the linked list.
-Create an empty array (object or map) called nodesEncountered to keep track of nodes we've seen.
-Begin traversing the linked list, starting from the headNode.
-While traversing:
-Check if the current node has been encountered before by looking it up in the nodesEncountered array.
-If the current node has been encountered before, it means there is a cycle in the linked list, so return true.
-If the current node has not been encountered before, add it to the nodesEncountered array and move to the next node in the list.
-If the traversal completes without finding any cycles (i.e., no repeated nodes are encountered), return false, indicating that the linked list does not contain a cycle.
+* Start with a function that takes in a given node as the starting point (headNode) of the linked list.
 
+* Create an empty array (object or map) called nodesEncountered to keep track of nodes we've seen.
+
+* Begin traversing the linked list, starting from the headNode.
+* While traversing:
+  * Check if the current node has been encountered before by looking it up in the nodesEncountered array.
+  * If the current node has been encountered before, it means there is a cycle in the linked list, so return true.
+  * If the current node has not been encountered before, add it to the nodesEncountered array and move to the next node in the list.
+  * If the traversal completes without finding any cycles (i.e., no repeated nodes are encountered), return false, indicating that the linked list does not contain a cycle.
 
 [Visual examples](https://visualgo.net/en/list)
