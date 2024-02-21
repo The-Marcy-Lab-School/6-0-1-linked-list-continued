@@ -18,7 +18,7 @@ class LinkedList {
     const newNode = new Node(data);
     this.#length++;
     
-    if (!this.head && !this.tail) {
+    if (!this.head) {
       this.head = newNode;
     } else {
       newNode.prev = this.tail;
@@ -54,6 +54,16 @@ class LinkedList {
     return data;
   }
 
+  removeFromTail() {
+    if (!this.head) return;
+
+    this.#length--;
+    const data = this.tail.data;
+    this.tail = this.tail.prev;
+    this.tail.next = null;
+    return data
+  }
+
   contains(data) {
     let currentNode = this.head;
     while (currentNode) {
@@ -69,3 +79,10 @@ class LinkedList {
     return this.#length;
   }
 }
+
+
+const newList = new LinkedList() 
+
+newList.appendToTail(23);
+
+console.log(newList);

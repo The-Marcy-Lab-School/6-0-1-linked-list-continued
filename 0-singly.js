@@ -106,4 +106,19 @@ class LinkedList {
       */
       return this.#length;
   }
+
+}
+
+const makeCopyLL = (head) => {
+
+    const newLinkedList = new LinkedList();
+    curr = head;
+    next = head.next;
+    while (!head.tail){
+        
+        newLinkedList.appendToTail(curr.data);
+        
+
+    }
+
 }
