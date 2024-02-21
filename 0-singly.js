@@ -45,12 +45,41 @@ class LinkedList {
   }
 
   removeHead() {
-      // remove the first Node in the LinkedList and returns its data
-      const data = this.head.data;
-      this.head = this.head.next;
-      this.#length--;
-      return data;
+    if (!this.head)  return
+
+    this.#length--;
+
+    if (this.head === this.tail) {
+        // Only one node in the list
+        const data = this.head.data;
+        this.head = null;
+        this.tail = null;
+        return data;
+    }
   }
+  removeFromTail() {
+    if (!this.head)  return
+
+    this.#length--;
+
+    if (this.head === this.tail) {
+        // Only one node in the list
+        const data = this.head.data;
+        this.head = null;
+        this.tail = null;
+        return data;
+    }
+
+    let currentNode = this.head;
+    while (currentNode.next !== this.tail) {
+        currentNode = currentNode.next;
+    }
+
+    const data = this.tail.data;
+    currentNode.next = null;
+    this.tail = currentNode;
+    return data;
+    }
 
   contains(data) {
       // returns true is any Node in the LinkedList contains the value data, false otherwise
